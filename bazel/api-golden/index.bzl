@@ -1,4 +1,4 @@
-load("@npm//@angular/dev-infra-private/bazel:extract_js_module_output.bzl", "extract_js_module_output")
+load("//bazel:extract_js_module_output.bzl", "extract_js_module_output")
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary", "nodejs_test")
 
 nodejs_test_args = [
@@ -68,13 +68,13 @@ def api_golden_test(
         include_default_files = False,
     )
 
-    test_data = ["@npm//@angular/dev-infra-private/bazel/api-golden", "//:package.json", ":%s_data_typings" % name] + \
+    test_data = ["//bazel/api-golden", "//:package.json", ":%s_data_typings" % name] + \
                 data + types
 
     nodejs_test(
         name = name,
         data = test_data,
-        entry_point = "@npm//@angular/dev-infra-private/bazel/api-golden:index.ts",
+        entry_point = "//bazel/api-golden:index.ts",
         templated_args = nodejs_test_args + [golden, entry_point, "false", quoted_export_pattern] +
                          extract_type_names_from_labels(types),
         **kwargs
@@ -84,7 +84,7 @@ def api_golden_test(
         name = name + ".accept",
         testonly = True,
         data = test_data,
-        entry_point = "@npm//@angular/dev-infra-private/bazel/api-golden:index.ts",
+        entry_point = "//bazel/api-golden:index.ts",
         templated_args = nodejs_test_args + [golden, entry_point, "true", quoted_export_pattern] +
                          extract_type_names_from_labels(types),
         **kwargs
@@ -109,8 +109,8 @@ def api_golden_test_npm_package(
 
     nodejs_test(
         name = name,
-        data = ["@npm//@angular/dev-infra-private/bazel/api-golden"] + data + types,
-        entry_point = "@npm//@angular/dev-infra-private/bazel/api-golden:index_npm_packages.ts",
+        data = ["//bazel/api-golden"] + data + types,
+        entry_point = "//bazel/api-golden:index_npm_packages.ts",
         templated_args = nodejs_test_args + [golden_dir, npm_package, "false", quoted_export_pattern] +
                          extract_type_names_from_labels(types),
         **kwargs
@@ -119,8 +119,8 @@ def api_golden_test_npm_package(
     nodejs_binary(
         name = name + ".accept",
         testonly = True,
-        data = ["@npm//@angular/dev-infra-private/bazel/api-golden"] + data + types,
-        entry_point = "@npm//@angular/dev-infra-private/bazel/api-golden:index_npm_packages.ts",
+        data = ["//bazel/api-golden"] + data + types,
+        entry_point = "//bazel/api-golden:index_npm_packages.ts",
         templated_args = nodejs_test_args + [golden_dir, npm_package, "true", quoted_export_pattern] +
                          extract_type_names_from_labels(types),
         **kwargs
