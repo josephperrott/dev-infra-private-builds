@@ -5,6 +5,10 @@
     "prepare": "husky install",
     "ng-dev": "ts-node --transpile-only ./ng-dev/cli.ts"
   },
+  "version": "0.0.1",
+  "bin": {
+    "ng-dev": "./ng-dev/cli.ts"
+  },
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0",
