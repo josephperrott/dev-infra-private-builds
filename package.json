@@ -6,6 +6,9 @@
     "prepare": "husky install",
     "ng-dev": "ts-node --transpile-only ./ng-dev/cli.ts"
   },
+  "bin": {
+    "ng-dev": "./ng-dev/cli.js"
+  },
   "dependencies": {
     "@actions/core": "^1.4.0",
     "@actions/github": "^5.0.0",
