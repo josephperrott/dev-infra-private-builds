@@ -1,6 +1,7 @@
 {
   "name": "@angular/dev-infra-private",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
     "prepare": "husky install",
     "ng-dev": "ts-node --transpile-only ./ng-dev/cli.ts"
