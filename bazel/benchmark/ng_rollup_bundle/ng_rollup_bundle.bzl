@@ -6,7 +6,7 @@
 load("@build_bazel_rules_nodejs//:index.bzl", "npm_package_bin")
 load("@npm//@bazel/terser:index.bzl", "terser_minified")
 load("@npm//@bazel/rollup:index.bzl", "rollup_bundle")
-load("//bazel:expand_template.bzl", "expand_template")
+load("@npm//@angular/dev-infra-private/bazel:expand_template.bzl", "expand_template")
 
 def ng_rollup_bundle(
         name,
@@ -34,7 +34,7 @@ def ng_rollup_bundle(
 
     [rollup_bundle]: https://github.com/bazelbuild/rules_nodejs/blob/1.x/packages/rollup/src/rollup_bundle.bzl
     [rollup]: https://rollupjs.org/guide/en/
-    [terser_minified]: https://bazelbuild.github.io/rules_nodejs/Terser.html
+    [terser_minified]: https:@npm//@angular/dev-infra-private/bazelbuild.github.io/rules_nodejs/Terser.html
     [brotli]: https://brotli.org/
     """
 

@@ -1,4 +1,4 @@
-load("//bazel:extract_js_module_output.bzl", "extract_js_module_output")
+load("@npm//@angular/dev-infra-private/bazel:extract_js_module_output.bzl", "extract_js_module_output")
 load("@build_bazel_rules_nodejs//:index.bzl", "nodejs_binary", "nodejs_test")
 
 nodejs_test_args = [
