@@ -1,4 +1,4 @@
-load("//bazel/browsers:browser_archive_repo.bzl", "browser_archive")
+load("@npm//@angular/dev-infra-private/bazel/browsers:browser_archive_repo.bzl", "browser_archive")
 
 """
   Defines repositories for Chromium that can be used inside Karma unit tests

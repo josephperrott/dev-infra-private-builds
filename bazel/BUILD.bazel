@@ -4,7 +4,7 @@ ts_library(
     name = "lib",
     visibility = ["//:npm"],
     deps = [
-        "//bazel/benchmark/driver-utilities",
+        "@npm//@angular/dev-infra-private/bazel/benchmark/driver-utilities",
     ],
 )
 
@@ -14,10 +14,10 @@ filegroup(
         "BUILD.bazel",
         "expand_template.bzl",
         "extract_js_module_output.bzl",
-        "//bazel/api-golden:files",
-        "//bazel/benchmark:files",
-        "//bazel/browsers:files",
-        "//bazel/remote-execution:files",
+        "@npm//@angular/dev-infra-private/bazel/api-golden:files",
+        "@npm//@angular/dev-infra-private/bazel/benchmark:files",
+        "@npm//@angular/dev-infra-private/bazel/browsers:files",
+        "@npm//@angular/dev-infra-private/bazel/remote-execution:files",
     ],
     visibility = ["//:npm"],
 )
