@@ -4,22 +4,20 @@
   "bin": {
     "ng-dev": "./ng-dev/cli-bundle.js"
   },
-  "private": true,
-  "scripts": {
-    "ng-dev": "ts-node --transpile-only ./ng-dev/cli.ts"
-  },
-  "dependencies": {
-    "@actions/core": "^1.4.0",
-    "@actions/github": "^5.0.0",
-    "@angular-devkit/build-optimizer": "^0.1201.3",
-    "@angular/benchpress": "0.2.1",
+  "devDependencies": {
     "@bazel/bazelisk": "^1.10.1",
     "@bazel/buildifier": "^4.0.1",
     "@bazel/esbuild": "4.0.0-beta.0",
     "@bazel/jasmine": "4.0.0-beta.0",
     "@bazel/protractor": "4.0.0-beta.0",
     "@bazel/runfiles": "4.0.0-beta.0",
-    "@bazel/typescript": "4.0.0-beta.0",
+    "@bazel/typescript": "4.0.0-beta.0"
+  },
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "@actions/github": "^5.0.0",
+    "@angular-devkit/build-optimizer": "^0.1201.3",
+    "@angular/benchpress": "0.2.1",
     "@microsoft/api-extractor": "7.18.4",
     "@octokit/core": "^3.5.1",
     "@octokit/graphql": "^4.6.1",
